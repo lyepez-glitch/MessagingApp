@@ -51,11 +51,13 @@ INSTALLED_APPS = [
 #     },
 # }
 
+REDIS_URL = os.getenv('REDIS_URL', 'redis://127.0.0.1:6379')
+
 CHANNEL_LAYERS = {
     'default': {
         'BACKEND': 'channels_redis.core.RedisChannelLayer',
         'CONFIG': {
-            "hosts": [('localhost', 6379)],  # For local Redis
+            "hosts": [(REDIS_URL)],
         },
     },
 }
@@ -154,5 +156,8 @@ STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where collectstatic will place
 DEFAULT_AUTO_FIELD = 'django.db.models.BigAutoField'
 
 import logging
+# Add the following for production:
+STATICFILES_STORAGE = 'django.contrib.staticfiles.storage.ManifestStaticFilesStorage'
+
 
 logging.basicConfig(level=logging.DEBUG)

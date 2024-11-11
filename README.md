@@ -2,6 +2,7 @@ Real-Time Chat Application
 A real-time web chat app built with Django, Django Channels, WebSockets, HTML, and CSS. This app enables multiple users to communicate instantly in dedicated chat rooms.
 
 Table of Contents
+
 Features
 Tech Stack
 Installation

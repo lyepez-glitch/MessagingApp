@@ -1,1 +1,1 @@
-web: gunicorn mysite.asgi:application
+web: gunicorn mysite.mysite.asgi:application

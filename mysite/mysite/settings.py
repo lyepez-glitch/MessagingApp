@@ -28,7 +28,7 @@ SECRET_KEY = 'django-insecure-4=s-y6ua&8kha!8ucdmr1yj6d*t%8n9y+-nyxanry#nmmh9573
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = False
 
-ALLOWED_HOSTS = ['.vercel.app']
+ALLOWED_HOSTS = ['.vercel.app','127.0.0.1']
 
 
 
@@ -148,7 +148,7 @@ STATICFILES_DIRS = [
 ]
 STATIC_ROOT = BASE_DIR / 'staticfiles'  # This is where collectstatic will place files
 
-
+SOCKET_URL = os.getenv("SOCKET_URL")
 
 # Default primary key field type
 # https://docs.djangoproject.com/en/5.1/ref/settings/#default-auto-field

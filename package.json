@@ -1,0 +1,12 @@
+{
+  "name": "message_app_auth",
+  "version": "1.0.0",
+  "description": "Real-Time Chat Application A real-time web chat app built with Django, Django Channels, WebSockets, HTML, and CSS. This app enables multiple users to communicate instantly in dedicated chat rooms.",
+  "main": "index.js",
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "keywords": [],
+  "author": "",
+  "license": "ISC"
+}

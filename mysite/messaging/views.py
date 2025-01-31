@@ -18,7 +18,7 @@ def rooms(request):
         "users": User.objects.all()
     }
   print(context["users"])
-  return render(request, "messaging/rooms.html", context)
+  return render(request, "messaging/rooms.html", [])
 
 
 def signUp(request):
@@ -151,7 +151,8 @@ def updateMsg(request,msg_id):
       return redirect('/rooms/dashboard')
   else:
     form = MessageForm(instance=msg)
-  return render(request, 'messaging/edit_message.html', {'form': form, 'message': msg})
+    socket_url = os.getenv("SOCKET_URL")
+  return render(request, 'messaging/edit_message.html', {'form': form, 'message': msg,'socket_url':socket_url})
 
 def deleteMsg(request,msg_id):
   msg = get_object_or_404(Message, id=msg_id)
